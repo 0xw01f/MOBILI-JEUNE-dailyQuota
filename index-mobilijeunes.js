@@ -45,13 +45,11 @@ function callback(error, response, body) {
 }
 
 
-function timeLoop() {        
-    
-    request(options, callback); 
-
+function timeLoop() {         
     setTimeout(function() {  
+        request(options, callback);
         timeLoop();             
-    }, 5000) // 30 minutes (30 * 60 * 1000)
+    }, 30 * 60 * 1000) // 30 minutes (30 * 60 * 1000)
   }
 
 
